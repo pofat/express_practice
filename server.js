@@ -1,7 +1,5 @@
-var http = require('http');
 var express = require('express');
 var app = express();
-var server = http.createServer(app);
 
 console.log('Server running');
 app.get('/', function(req, res){
