@@ -20,11 +20,13 @@ app.get('/send', function(req, res){
 	res.end();
 });
 
+//-----sth unknown wrong here: req.body is undefined.  HELP PLZ!
 app.use(express.bodyParser());
 app.post('/formData', function(req, res){
 	console.log(req.body);
 	res.send('<h1>Hello ' + req.body.username + '</h1>');
 	res.end();
 });
+//------
 
 app.listen(8888);
