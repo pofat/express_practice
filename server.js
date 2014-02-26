@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 
 console.log('Server running');
+
+app.use(express.bodyParser());
+
 app.get('/', function(req, res){
 	res.sendfile(__dirname + '/index.html');
 });
@@ -20,8 +23,6 @@ app.get('/send', function(req, res){
 	res.end();
 });
 
-//-----sth unknown wrong here: req.body is undefined.  HELP PLZ!
-app.use(express.bodyParser());
 app.post('/formData', function(req, res){
 	console.log(req.body);
 	res.send('<h1>Hello ' + req.body.username + '</h1>');
